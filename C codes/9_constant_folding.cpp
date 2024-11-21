@@ -63,9 +63,9 @@ int main() {
         } else if (is_digit(expression[i]) || expression[i] == '.') {
             double num = extract_constant(expression, &i);
             constants++;
-            printf("%.2f ", num);
+            printf("%.2f ", num);  
             if (current_op == '+') {
-                result += current_value;
+                result += current_value; 
                 current_value = num;
             } else if (current_op == '-') {
                 result += current_value;
@@ -76,13 +76,14 @@ int main() {
                 current_value /= num;
             }
         } else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/') {
-            current_op = expression[i++];
+            current_op = expression[i++];  
         } else {
-            i++;
+            i++;  
         }
     }
 
     result += current_value;
+
     optimized[j] = '\0';
 
     printf("\nBefore optimization: %d\nAfter optimization: %d", variables + constants, variables + 1);
